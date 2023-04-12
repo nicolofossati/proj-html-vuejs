@@ -75,6 +75,8 @@
 </script>
 
 <style scoped lang="scss">
+@use "../styles/colors.scss" as *;
+
 .main-container {
     width: 60%;
     margin: auto;

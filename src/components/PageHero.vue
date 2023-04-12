@@ -11,6 +11,8 @@
 <script></script>
 
 <style scoped lang="scss">
+@use "../styles/colors.scss" as *;
+
 .hero-container {
     width: 60%;
     margin: auto;

@@ -31,6 +31,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@use "../styles/colors.scss" as *;
+
 .footer-container {
     display: flex;
     flex-direction: column;
@@ -44,7 +46,7 @@ export default {
 .nav-bar {
 
     .selected {
-        color: orange;
+        color: $primary-color;
     }
 
     span {
