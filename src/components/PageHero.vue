@@ -67,6 +67,11 @@ export default {
 
             .hero-buttons {
                 margin-bottom: 0;
+                width: 100%;
+
+                &>* {
+                    margin-right: 15px;
+                }
             }
         }
     }

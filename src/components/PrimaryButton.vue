@@ -17,12 +17,14 @@ export default {
 a {
     text-decoration: none;
     color: white;
+    display: inline-block;
 }
 
 span {
-    padding: 8px 10px;
+    padding: 8px 15px;
     background-color: $primary-color;
     border-radius: 20px;
     font-weight: 600;
+    font-size: 10px;
 }
 </style>
