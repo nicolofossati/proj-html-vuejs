@@ -1,18 +1,18 @@
 <template>
   <div class="header-hero">
-    <PageHeader :navBar="HeaderNavBar" />
+    <PageHeader :navBar="NavBar" />
     <PageHero />
   </div>
 
   <PageMain />
-  <PageFooter />
+  <PageFooter :navBar="NavBar" />
 </template>
 
 <script>
 export default {
   data() {
     return {
-      HeaderNavBar: ['Home', 'Who We Are', 'What We Do', 'Where We Work', 'Careers', 'News', 'Get in touch now']
+      NavBar: ['Home', 'Who We Are', 'What We Do', 'Where We Work', 'Careers', 'News', 'Get in touch now']
     }
   }, components: {
     PageHeader, PageHero, PageMain, PageFooter
