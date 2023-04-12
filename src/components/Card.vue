@@ -15,11 +15,16 @@
         <span>{{ content }}</span>
         <span class="read-more">Read More ></span>
     </div>
-    <!-- Il primo tipo di Card (bianco)-->
+    <!-- Il terzo tipo di Card (bianco) PLANS section-->
     <div class="card" id="third-card" v-else>
         <h4>{{ title }}</h4>
         <div class="price-container">
-            <span>{{ price }}</span>
+            <span class="dollar">$</span>
+            <span class="price">{{ price }}</span>
+            <div class="rigth-price">
+                <span class="cents">99</span>
+                <span class="montly">montly</span>
+            </div>
         </div>
         <span class="poject">{{ project }} Projects</span>
         <span class="storage">{{ gigabyte }} Storage</span>
@@ -96,6 +101,40 @@ import TertiaryButton from './TertiaryButton.vue';
 
     &>span {
         display: block;
+    }
+
+    .price-container {
+        display: flex;
+        justify-content: center;
+        font-weight: 900;
+
+        .dollar {
+            padding-top: 5px;
+        }
+
+        .price {
+            font-size: 30px;
+            color: $violet-text;
+            justify-items: center;
+        }
+
+        .rigth-price {
+            display: flex;
+            flex-direction: column;
+            padding-top: 5px;
+        }
+
+        .cents {
+            padding: 0;
+            align-self: start;
+            color: $violet-text;
+        }
+
+        .montly {
+            align-self: end;
+            font-style: italic;
+            font-size: 10px;
+        }
     }
 
 }

@@ -66,9 +66,10 @@
                 </div>
                 <div class="card-container">
                     <Card :cardtype="'third'" :title="'Standard'" :price="'19'" :project="'5'" :gigabyte="'5 GB'" />
-                    <Card :cardtype="'third'" :title="'Premium'" :price="'19'" :project="'5'" :gigabyte="'5 GB'" />
-                    <Card :cardtype="'third'" :title="'Professional'" :price="'19'" :project="'5'" :gigabyte="'5 GB'" />
-                    <Card :cardtype="'third'" :title="'Extreme'" :price="'19'" :project="'5'" :gigabyte="'5 GB'" />
+                    <Card :cardtype="'third'" :title="'Premium'" :price="'29'" :project="'10'" :gigabyte="'15 GB'" />
+                    <Card :cardtype="'third'" :title="'Professional'" :price="'39'" :project="'15'" :gigabyte="'30 GB'" />
+                    <Card :cardtype="'third'" :title="'Extreme'" :price="'59'" :project="'Unlimited'"
+                        :gigabyte="'Unlimited'" />
                 </div>
             </div>
         </section>
@@ -190,6 +191,7 @@ import Card from './Card.vue';
         background-image: url('../img/background1.jpg');
         background-size: cover;
         height: 500px;
+        color: white;
     }
 
     .button-container {
