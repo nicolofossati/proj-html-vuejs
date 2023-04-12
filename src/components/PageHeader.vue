@@ -38,7 +38,7 @@ export default {
 @use "../styles/colors.scss" as *;
 
 .header-container {
-    //position: fixed;
+    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
@@ -51,7 +51,6 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #4c235b;
 
 
     .logo {
