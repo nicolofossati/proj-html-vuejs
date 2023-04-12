@@ -5,7 +5,7 @@
             <div class="nav-bar">
                 <span v-for="(link, index) in navBar" :key="index">
                     <span v-if="link == 'Get in touch now'">
-                        <PrimaryButton :content="link.toUpperCase()" />
+                        <PrimaryButton :content="link" />
                     </span>
                     <span v-else-if="link == 'Careers'" :class="(index == selectedLink) ? 'selected' : ''">{{ link }}
                         <span class="apply-tag">APPLY</span> </span>

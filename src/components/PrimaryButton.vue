@@ -1,6 +1,6 @@
 <!-- Bottone arancione -->
 <template>
-    <a href="#"><span>{{ content }}</span></a>
+    <a href="#"><span>{{ content.toUpperCase() }}</span></a>
 </template>
 
 <script>
