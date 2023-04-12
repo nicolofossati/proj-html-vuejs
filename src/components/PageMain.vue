@@ -8,11 +8,11 @@
                         Velit!</span>
                 </div>
                 <div class="card-container">
-                    <Card :icon="'road'" :title="'Estabilish Goals'"
+                    <Card :cardtype="'first'" :icon="'road'" :title="'Estabilish Goals'"
                         :content="'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id sed voluptates provident quamtempore illo culpa exercitationem nisi.'" />
-                    <card :icon="'video'" :title="'Work With a Team'"
+                    <Card :cardtype="'first'" :icon="'video'" :title="'Work With a Team'"
                         :content="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum molestias enim temporibus id totam cumque nesciunt, obcaecati impedit.'" />
-                    <card :icon="'droplet'" :title="'Get Results'"
+                    <Card :cardtype="'first'" :icon="'droplet'" :title="'Get Results'"
                         :content="'Lorem ipsum dolor sit amet consectetur adipisicing elit.Ad suscipit quasi recusandae odit! Voluptatibus itaque sed debitis eaque!'" />
 
                 </div>
@@ -20,28 +20,40 @@
             </div>
         </section>
         <section class="services">
-            <div>
-                <h3>See ecc...</h3>
-                <span>Lorem ipsum</span>
+            <div class="services-content">
+                <div class="section-info">
+                    <h3>See Our Top Notch Services</h3>
+                    <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate, saepe.</span>
+                </div>
                 <div class="card-container">
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
+                    <Card :cardtype="'second'" :icon="'google'" :title="'Google SEO'"
+                        :content="'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id sed voluptates provident quamtempore illo culpa exercitationem nisi.'" />
+                    <Card :cardtype="'second'" :icon="'gear'" :title="'Work With a Team'"
+                        :content="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum molestias enim temporibus id totam cumque nesciunt, obcaecati impedit.'" />
+                    <Card :cardtype="'second'" :icon="'building'" :title="'Get Results'"
+                        :content="'Lorem ipsum dolor sit amet consectetur adipisicing elit.Ad suscipit quasi recusandae odit! Voluptatibus itaque sed debitis eaque!'" />
+                    <Card :cardtype="'second'" :icon="'chart-bar'" :title="'Get Results'"
+                        :content="'Lorem ipsum dolor sit amet consectetur adipisicing elit.Ad suscipit quasi recusandae odit! Voluptatibus itaque sed debitis eaque!'" />
+
                 </div>
             </div>
         </section>
         <section class="work">
-            <div>
-                <h3>Our Work</h3>
-                <span>Lorem ipsum</span>
+            <div class="work-content">
+                <div class="section-info">
+                    <h3>Our Work</h3>
+                    <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, qui!</span>
+                </div>
                 <div class="card-container work-img-container">
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
+                    <img src="../img/case-study-gallery-3-1-400x300.jpg" alt="">
+                    <img src="../img/case-study-gallery-2-400x300.jpg" alt="">
+                    <img src="../img/case-study-gallery-1-1-400x300.jpg" alt="">
+                    <img src="../img/case-study-gallery-4-1-400x300.jpg" alt="">
+                    <img src="../img/case-study-gallery-5-1-400x300.jpg" alt="">
+                    <img src="../img/case-study-gallery-6-1-400x300.jpg" alt="">
+                </div>
+                <div class="button-container">
+                    <PrimaryButton :content="'view our work'" />
                 </div>
             </div>
         </section>
@@ -97,11 +109,11 @@ export default {
         return {
         }
     }, components: {
-        Card
+        Card, PrimaryButton
     }
 }
 
-
+import PrimaryButton from './PrimaryButton.vue';
 import Card from './Card.vue';
 </script>
 
@@ -109,6 +121,8 @@ import Card from './Card.vue';
 @use "../styles/colors.scss" as *;
 
 .main-container {
+
+
 
     section {
         padding-top: 40px;
@@ -142,13 +156,10 @@ import Card from './Card.vue';
         .card {
             width: calc(100% /3 - 20px);
             margin: 10px;
-            background-color: white;
         }
     }
 
-    .work-img-container {
-        flex-wrap: wrap;
-    }
+
 
     .meet {
         img {
@@ -156,6 +167,26 @@ import Card from './Card.vue';
         }
     }
 
+    .services {
+        background-color: $secondary-color;
+        color: white;
+        padding: 50px 0;
+    }
 
+
+    .work-img-container {
+        flex-wrap: wrap;
+
+        img {
+            width: calc(100% /3 - 20px);
+            margin: 10px;
+        }
+
+
+    }
+
+    .button-container {
+        padding: 30px 0 50px 0;
+    }
 }
 </style>
