@@ -14,7 +14,7 @@ export default {
       selectedNBLink: 0 //indica il link della navbar selezionato al momento. (Indice NabBar array)
     }
   }, components: {
-    PageHeader, PageHero, PageMain, PageFooter, PrimaryButton, SecondaryButton, Card
+    PageHeader, PageHero, PageMain, PageFooter, PrimaryButton, SecondaryButton, TertiaryButton, Card
   }
 }
 
@@ -26,6 +26,7 @@ import PageMain from './components/PageMain.vue';
 import PageFooter from './components/PageFooter.vue';
 import PrimaryButton from './components/PrimaryButton.vue';
 import SecondaryButton from './components/SecondaryButton.vue';
+import TertiaryButton from './components/TertiaryButton.vue';
 import Card from './components/Card.vue';
 </script>
 

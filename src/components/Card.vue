@@ -17,10 +17,15 @@
     </div>
     <!-- Il primo tipo di Card (bianco)-->
     <div class="card" id="third-card" v-else>
-        <i v-if="icon == 'google'" :class="'fa-brands fa-' + icon"></i>
-        <i v-else :class="'fa-solid fa-' + icon"></i>
         <h4>{{ title }}</h4>
-        <span>{{ content }}</span>
+        <div class="price-container">
+            <span>{{ price }}</span>
+        </div>
+        <span class="poject">{{ project }} Projects</span>
+        <span class="storage">{{ gigabyte }} Storage</span>
+        <span class="users">Unlimited Users</span>
+        <TertiaryButton :content="'start today'" v-if="title != 'Professional'" />
+        <PrimaryButton :content="'start today'" v-else />
     </div>
 </template>
 
@@ -30,9 +35,17 @@ export default {
         icon: String,
         title: String,
         content: String,
-        cardtype: String
+        cardtype: String,
+        price: String,
+        project: String,
+        gigabyte: String
+    }, components: {
+        PrimaryButton, TertiaryButton
     }
 }
+
+import PrimaryButton from './PrimaryButton.vue';
+import TertiaryButton from './TertiaryButton.vue';
 </script>
 
 <style scoped lang="scss">
@@ -67,6 +80,22 @@ export default {
         padding-top: 15px;
         display: block;
         color: $primary-color;
+    }
+
+}
+
+#third-card {
+    width: 100%;
+    background-color: white;
+    margin: 10px;
+    color: $grey-text;
+
+    h4 {
+        color: black;
+    }
+
+    &>span {
+        display: block;
     }
 
 }

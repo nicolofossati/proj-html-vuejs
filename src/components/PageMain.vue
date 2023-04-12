@@ -58,14 +58,17 @@
             </div>
         </section>
         <section class="plans">
-            <div>
-                <h3>Our Plans</h3>
-                <span>Lorem ipsum</span>
+            <div class="plans-content">
+                <div class="section-info">
+                    <h3>Our Plans</h3>
+                    <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur maiores labore, eaque
+                        asperiores perferendis ipsam.</span>
+                </div>
                 <div class="card-container">
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
+                    <Card :cardtype="'third'" :title="'Standard'" :price="'19'" :project="'5'" :gigabyte="'5 GB'" />
+                    <Card :cardtype="'third'" :title="'Premium'" :price="'19'" :project="'5'" :gigabyte="'5 GB'" />
+                    <Card :cardtype="'third'" :title="'Professional'" :price="'19'" :project="'5'" :gigabyte="'5 GB'" />
+                    <Card :cardtype="'third'" :title="'Extreme'" :price="'19'" :project="'5'" :gigabyte="'5 GB'" />
                 </div>
             </div>
         </section>
@@ -181,8 +184,12 @@ import Card from './Card.vue';
             width: calc(100% /3 - 20px);
             margin: 10px;
         }
+    }
 
-
+    .plans {
+        background-image: url('../img/background1.jpg');
+        background-size: cover;
+        height: 500px;
     }
 
     .button-container {
