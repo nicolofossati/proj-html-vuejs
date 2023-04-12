@@ -3,7 +3,8 @@
         <img class="logo" src="../img/logo_seo_1x.png" alt="">
 
         <div class="nav-bar">
-            <span v-for="link in navBar">{{ link }}</span>
+            <span v-for="(link, index) in navBar" :key="index" :class="(index == selectedLink) ? 'selected' : ''">{{
+                link }}</span>
         </div>
 
         <div class="copyright">
@@ -23,7 +24,8 @@
 <script>
 export default {
     props: {
-        navBar: Array
+        navBar: Array,
+        selectedLink: Number
     }
 }
 </script>
@@ -40,6 +42,11 @@ export default {
 }
 
 .nav-bar {
+
+    .selected {
+        color: orange;
+    }
+
     span {
         padding-left: 15px;
         font-size: 14px;
