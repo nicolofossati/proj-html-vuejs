@@ -74,22 +74,51 @@
             </div>
         </section>
         <section class="news">
-            <div>
-                <h3>Our News</h3>
-                <span>Lorem ipsum</span>
+            <div class="news-content">
+                <div class="section-info">
+                    <h3>Our News</h3>
+                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem similique non, officia
+                        maxime est quibusdam?
+                    </span>
+                </div>
+
                 <div class="card-container">
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
+                    <div class="news-card">
+                        <img src="../img/related-service-2-320x202.jpg" alt="">
+                        <h4>Why You Need A SEO Agency</h4>
+                        <span class="news-date">November 1st, 2017</span>
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta fugit provident ipsa esse
+                            magni quibusdam possimus ab tempore officiis ipsam?</span>
+                    </div>
+                    <div class="news-card">
+                        <img src="../img/related-service-4-320x202.jpg" alt="">
+                        <h4>SEO Tips For Your Startup</h4>
+                        <span class="news-date">November 1st, 2017</span>
+                        <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex facere, nemo architecto
+                            asperiores deserunt maxime veniam error eaque magni distinctio!</span>
+                    </div>
+                    <div class="news-card">
+                        <img src="../img/blog-post-6-320x202.jpg" alt="">
+                        <h4>Image Optimization For Your Site</h4>
+                        <span class="news-date">November 1st, 2017</span>
+                        <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit beatae sapiente velit
+                            excepturi accusamus odit reiciendis sequi numquam distinctio possimus.</span>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <PrimaryButton :content="'go to news'" />
                 </div>
             </div>
         </section>
         <section class="reviews">
-            <div>
-                <h3>What Our Clients Say</h3>
-                <img src="" alt="">
-                <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, laboriosam.</span>
-                <span><span>Luis Desalvo, </span>CREO TECH</span>
+            <div class="reviews-content">
+                <div class="section-info">
+                    <h3>What Our Clients Say</h3>
+                    <img src="../img/testimonials-2.jpg" alt="">
+                    <span class="review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi,
+                        laboriosam.</span>
+                    <span><span>Luis Desalvo, </span>CREO TECH</span>
+                </div>
                 <div class="card-container">
                     <div class="card"></div>
                     <div class="card"></div>
@@ -157,9 +186,24 @@ import Card from './Card.vue';
         flex-direction: row;
         padding-top: 40px;
 
-        .card {
+        .news-card {
             width: calc(100% /3 - 20px);
             margin: 10px;
+
+            h4 {
+                color: $primary-color;
+                padding-top: 5px;
+            }
+
+            .news-date {
+                font-size: 12px;
+                display: block;
+                padding: 10px 0;
+            }
+
+            img {
+                width: 100%;
+            }
         }
     }
 
@@ -192,6 +236,12 @@ import Card from './Card.vue';
         background-size: cover;
         height: 500px;
         color: white;
+    }
+
+    .reviews {
+        .review {
+            display: block;
+        }
     }
 
     .button-container {

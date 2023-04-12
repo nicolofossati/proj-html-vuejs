@@ -38,7 +38,7 @@ export default {
 @use "../styles/colors.scss" as *;
 
 .header-container {
-    position: fixed;
+    position: absolute;
     width: 100%;
     top: 0;
     left: 0;
