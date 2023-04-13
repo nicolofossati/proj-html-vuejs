@@ -10,6 +10,7 @@
 export default {
   data() {
     return {
+      store,
       NavBar: ['Home', 'Who We Are', 'What We Do', 'Where We Work', 'Careers', 'News', 'Get in touch now'],
       selectedNBLink: 0 //indica il link della navbar selezionato al momento. (Indice NabBar array)
     }
@@ -17,6 +18,9 @@ export default {
     PageHeader, PageHero, PageMain, PageFooter, PrimaryButton, SecondaryButton, TertiaryButton, Card
   }
 }
+
+
+import { store } from './store.js';
 
 import "@fontsource/open-sans";
 

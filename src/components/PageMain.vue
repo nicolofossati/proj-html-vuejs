@@ -115,15 +115,25 @@
         </section>
         <section class="reviews">
             <div class="reviews-content">
-                <div class="section-info">
-                    <h3>What Our Clients Say</h3>
-                    <img src="../img/testimonials-2.jpg" alt="">
-                    <span class="review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi,
-                        laboriosam.</span>
-                    <span class="testimonial-company"><span class="testimonial">Luis Desalvo, </span>CREO TECH</span>
-                    <div class="dots">
-                        <span class="dot selected-dot"></span>
-                        <span class="dot"></span>
+                <div class="slider-reviews">
+                    <div class="left-arrow"><i class="fa-solid fa-chevron-left" v-if="store.current_client > 0"
+                            @click="slider_review_change('left')"></i></div>
+                    <div class="right-arrow"><i class="fa-solid fa-chevron-right"
+                            v-if="store.current_client < store.clients.length - 1"
+                            @click="slider_review_change('right')"></i></div>
+                    <div class="section-info">
+                        <h3>What Our Clients Say</h3>
+                        <div v-for="(client, index) in store.clients" v-show="index == store.current_client">
+                            <img :src="getImgUrl(client.img)" alt="">
+                            <span class="review">{{ client.review }}</span>
+                            <span class="testimonial-company"><span class="testimonial">{{ client.name }},
+                                </span>{{ client.agency }}</span>
+                        </div>
+
+                        <div class="dots">
+                            <span :class="(store.current_client == index) ? 'dot selected-dot' : 'dot'"
+                                v-for="(dot, index) in store.clients.length"></span>
+                        </div>
                     </div>
                 </div>
                 <div class="card-container divider">
@@ -155,11 +165,25 @@
 export default {
     data() {
         return {
+            store
         }
     }, components: {
         Card, PrimaryButton
+    }, methods: {
+        getImgUrl(path) {
+            return new URL(path, import.meta.url).href;
+        },
+        slider_review_change(side) {
+            if (side == "left") {
+                store.current_client--;
+            } else { // right
+                store.current_client++;
+            }
+        }
     }
 }
+
+import { store } from '../store.js';
 
 import PrimaryButton from './PrimaryButton.vue';
 import Card from './Card.vue';
@@ -298,52 +322,68 @@ import Card from './Card.vue';
     }
 
     .reviews {
+        .slider-reviews {
+            position: relative;
 
-        .section-info {
-            padding-bottom: 30px;
-
-            img {
-                width: 100px;
-                border-radius: 50%;
-                margin: 20px 0;
+            .left-arrow {
+                position: absolute;
+                left: 0;
+                top: 50%;
             }
 
-            .review {
-                display: block;
-                font-style: italic;
+            .right-arrow {
+                position: absolute;
+                right: 0;
+                top: 50%;
             }
 
-            .testimonial-company {
-                display: block;
-                padding: 15px 0;
+            .section-info {
+                padding-bottom: 30px;
 
-                .testimonial {
-                    font-weight: 900;
-                }
-            }
-
-
-            .dots {
-                display: flex;
-                justify-content: space-between;
-                width: 30px;
-                margin: auto;
-
-                .dot {
-                    display: inline-block;
-                    padding: 2px;
-                    border: 1px solid black;
-                    width: 10px;
-                    height: 10px;
+                img {
+                    width: 100px;
+                    aspect-ratio: 1/1;
                     border-radius: 50%;
+                    margin: 20px 0;
                 }
 
-                .selected-dot {
-                    background-color: black;
+                .review {
+                    display: block;
+                    font-style: italic;
                 }
 
+                .testimonial-company {
+                    display: block;
+                    padding: 15px 0;
+
+                    .testimonial {
+                        font-weight: 900;
+                    }
+                }
+
+
+                .dots {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 30px;
+                    margin: auto;
+
+                    .dot {
+                        display: inline-block;
+                        border: 1px solid black;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                    }
+
+                    .selected-dot {
+                        background-color: black;
+                    }
+
+                }
             }
         }
+
 
         .divider {
             border-top: 1px solid $light-grey-text;
@@ -361,11 +401,12 @@ import Card from './Card.vue';
         position: relative;
 
         .img-backround {
-            background-image: url('../img/case-study-gallery-3-1-1200x900.jpg');
+            background-image: url('../img/case-study-gallery-3-1.jpg');
             background-size: cover;
             width: 100%;
             height: 100%;
             position: absolute;
+            background-position: center;
 
             &::before {
                 content: '';
