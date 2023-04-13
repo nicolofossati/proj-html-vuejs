@@ -24,7 +24,7 @@ span {
     padding: 8px 15px;
     background-color: $tertiary-color;
     border-radius: 20px;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 10px;
 }
 </style>

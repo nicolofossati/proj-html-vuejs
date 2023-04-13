@@ -12,7 +12,7 @@
         <i v-if="icon == 'google'" :class="'fa-brands fa-' + icon"></i>
         <i v-else :class="'fa-solid fa-' + icon"></i>
         <h4>{{ title }}</h4>
-        <span>{{ content }}</span>
+        <span class="content-span">{{ content }}</span>
         <span class="read-more">Read More ></span>
     </div>
     <!-- Il terzo tipo di Card (bianco) PLANS section-->
@@ -58,6 +58,8 @@ import TertiaryButton from './TertiaryButton.vue';
 
 .card {
     padding: 20px;
+    margin: 10px;
+    background-color: white;
 
     i {
         font-size: 23px;
@@ -68,23 +70,29 @@ import TertiaryButton from './TertiaryButton.vue';
     h4 {
         font-size: 17px;
         padding-bottom: 15px;
+        font-weight: 900;
     }
 
     span {
         font-size: 13px;
         padding-bottom: 20px;
+        color: $grey-text;
+        font-weight: 600;
     }
 }
 
 #second-card {
     background-color: $secondary-light-color;
-    margin: 10px;
     color: white;
 
     .read-more {
         padding-top: 15px;
         display: block;
         color: $primary-color;
+    }
+
+    .content-span {
+        color: white;
     }
 
 }
@@ -106,28 +114,31 @@ import TertiaryButton from './TertiaryButton.vue';
     .price-container {
         display: flex;
         justify-content: center;
-        font-weight: 900;
 
         .dollar {
             padding-top: 5px;
+            font-weight: 900;
         }
 
         .price {
             font-size: 30px;
             color: $violet-text;
             justify-items: center;
+            font-weight: 900;
         }
 
         .rigth-price {
             display: flex;
             flex-direction: column;
             padding-top: 5px;
+
         }
 
         .cents {
             padding: 0;
             align-self: start;
             color: $violet-text;
+            font-weight: 900;
         }
 
         .montly {

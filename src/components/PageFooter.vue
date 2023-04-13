@@ -46,7 +46,7 @@ export default {
 
     .copyright {
 
-        font-size: 13px;
+        font-size: 11px;
 
         .emphasized {
             color: black;
@@ -63,7 +63,7 @@ export default {
 
         span {
             padding-left: 30px;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 600;
         }
     }

@@ -47,7 +47,7 @@ export default {
 .header-content {
     width: 60%;
     margin: auto;
-    height: 50px;
+    height: 75px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,7 +66,7 @@ export default {
         span {
             margin-left: 10px;
             color: white;
-            font-size: 12px;
+            font-size: 13px;
         }
 
         .apply-tag {
@@ -75,6 +75,7 @@ export default {
             border-radius: 5px;
             color: $primary-color;
             margin-left: 2px;
+            font-size: 10px;
         }
     }
 }

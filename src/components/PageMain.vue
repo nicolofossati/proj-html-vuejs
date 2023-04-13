@@ -16,7 +16,7 @@
                         :content="'Lorem ipsum dolor sit amet consectetur adipisicing elit.Ad suscipit quasi recusandae odit! Voluptatibus itaque sed debitis eaque!'" />
 
                 </div>
-                <img src="../img/agency-seo-desk-front-800x380.jpg" alt="">
+                <img src="../img/agency-seo-desk-front.jpg" alt="">
             </div>
         </section>
         <section class="services">
@@ -30,8 +30,8 @@
                         :content="'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id sed voluptates provident quamtempore illo culpa exercitationem nisi.'" />
                     <Card :cardtype="'second'" :icon="'gear'" :title="'Work With a Team'"
                         :content="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum molestias enim temporibus id totam cumque nesciunt, obcaecati impedit.'" />
-                    <Card :cardtype="'second'" :icon="'building'" :title="'Get Results'"
-                        :content="'Lorem ipsum dolor sit amet consectetur adipisicing elit.Ad suscipit quasi recusandae odit! Voluptatibus itaque sed debitis eaque!'" />
+                    <Card :cardtype="'second'" :icon="'building'" :title="'Local SEO'"
+                        :content="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus itaque sed temporibus id totam cadipisicing elit.'" />
                     <Card :cardtype="'second'" :icon="'chart-bar'" :title="'Get Results'"
                         :content="'Lorem ipsum dolor sit amet consectetur adipisicing elit.Ad suscipit quasi recusandae odit! Voluptatibus itaque sed debitis eaque!'" />
 
@@ -87,21 +87,24 @@
                         <img src="../img/related-service-2-320x202.jpg" alt="">
                         <h4>Why You Need A SEO Agency</h4>
                         <span class="news-date">November 1st, 2017</span>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta fugit provident ipsa esse
+                        <span class="news-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta fugit
+                            provident ipsa esse
                             magni quibusdam possimus ab tempore officiis ipsam?</span>
                     </div>
                     <div class="news-card">
                         <img src="../img/related-service-4-320x202.jpg" alt="">
                         <h4>SEO Tips For Your Startup</h4>
                         <span class="news-date">November 1st, 2017</span>
-                        <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex facere, nemo architecto
+                        <span class="news-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex facere, nemo
+                            architecto
                             asperiores deserunt maxime veniam error eaque magni distinctio!</span>
                     </div>
                     <div class="news-card">
                         <img src="../img/blog-post-6-320x202.jpg" alt="">
                         <h4>Image Optimization For Your Site</h4>
                         <span class="news-date">November 1st, 2017</span>
-                        <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit beatae sapiente velit
+                        <span class="news-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit
+                            beatae sapiente velit
                             excepturi accusamus odit reiciendis sequi numquam distinctio possimus.</span>
                     </div>
                 </div>
@@ -137,7 +140,7 @@
             <div class="img-backround"></div>
             <div class="contact-us-content">
                 <div class="section-info">
-                    <h3>Start Your Free Concultation</h3>
+                    <h3>Start Your Free Consultation</h3>
                     <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, molestiae!</span>
                     <div class="button-container">
                         <PrimaryButton :content="'contact us now'" />
@@ -166,11 +169,8 @@ import Card from './Card.vue';
 @use "../styles/colors.scss" as *;
 
 .main-container {
-
-
-
     section {
-        padding-top: 40px;
+        padding-top: 80px;
         text-align: center;
 
         &:nth-child(2n+1) {
@@ -189,6 +189,12 @@ import Card from './Card.vue';
 
             h3 {
                 padding-bottom: 20px;
+                font-weight: 900;
+                font-size: 22px;
+            }
+
+            span {
+                font-weight: 600;
             }
         }
     }
@@ -219,11 +225,15 @@ import Card from './Card.vue';
         }
     }
 
-
-
     .meet {
         img {
             display: block;
+            width: 90%;
+            margin: auto;
+        }
+
+        span {
+            color: $grey-text;
         }
     }
 
@@ -233,21 +243,58 @@ import Card from './Card.vue';
         padding: 50px 0;
     }
 
+    .work {
+        padding-bottom: 40px;
 
-    .work-img-container {
-        flex-wrap: wrap;
+        span {
+            color: $grey-text;
+        }
 
-        img {
-            width: calc(100% /3 - 20px);
-            margin: 10px;
+        .work-img-container {
+            flex-wrap: wrap;
+
+            img {
+                width: calc(100% /3 - 20px);
+                margin: 10px;
+            }
         }
     }
 
     .plans {
         background-image: url('../img/background1.jpg');
         background-size: cover;
-        height: 500px;
         color: white;
+
+        .plans-content {
+            padding-bottom: 50px;
+        }
+    }
+
+    .news {
+        padding-bottom: 30px;
+
+        .section-info {
+            span {
+                color: $grey-text;
+            }
+        }
+
+        .news-content {
+            .news-card {
+                h4 {
+                    font-weight: 900;
+                }
+
+                span {
+                    color: $grey-text;
+                    font-weight: 600;
+                }
+
+                .news-text {
+                    font-size: 14px;
+                }
+            }
+        }
     }
 
     .reviews {
@@ -326,7 +373,7 @@ import Card from './Card.vue';
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color: rgb(0, 0, 0, 0.4);
+                background-color: rgb(0, 0, 0, 0.6);
                 position: absolute;
             }
         }
@@ -335,7 +382,7 @@ import Card from './Card.vue';
         color: white;
 
         .contact-us-content {
-            padding: 50px 0;
+            padding: 80px 0px 30px;
             position: relative;
         }
     }

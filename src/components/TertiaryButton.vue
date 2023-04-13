@@ -23,7 +23,7 @@ a {
 span {
     padding: 8px 15px;
     border-radius: 20px;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 10px;
     border: $grey-text 1px solid;
 }
