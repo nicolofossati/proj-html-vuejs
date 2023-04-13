@@ -117,7 +117,11 @@
                     <img src="../img/testimonials-2.jpg" alt="">
                     <span class="review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi,
                         laboriosam.</span>
-                    <span><span>Luis Desalvo, </span>CREO TECH</span>
+                    <span class="testimonial-company"><span class="testimonial">Luis Desalvo, </span>CREO TECH</span>
+                    <div class="dots">
+                        <span class="dot selected-dot"></span>
+                        <span class="dot"></span>
+                    </div>
                 </div>
                 <div class="card-container">
                     <div class="card"></div>
@@ -239,9 +243,52 @@ import Card from './Card.vue';
     }
 
     .reviews {
-        .review {
-            display: block;
+
+        .section-info {
+            img {
+                width: 100px;
+                border-radius: 50%;
+                margin: 20px 0;
+            }
+
+            .review {
+                display: block;
+                font-style: italic;
+            }
+
+            .testimonial-company {
+                display: block;
+                padding: 15px 0;
+
+                .testimonial {
+                    font-weight: 900;
+                }
+            }
+
+
+            .dots {
+                display: flex;
+                justify-content: space-between;
+                width: 30px;
+                margin: auto;
+
+                .dot {
+                    display: inline-block;
+                    padding: 2px;
+                    border: 1px solid black;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                }
+
+                .selected-dot {
+                    background-color: black;
+                }
+
+            }
         }
+
+
     }
 
     .button-container {
