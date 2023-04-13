@@ -10,9 +10,9 @@ export const store = reactive({
         {
             name: 'Luisa Desole',
             img: '../img/testimonials-1.jpg',
-            agency: 'Luisa Agency',
-            review: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, laboriosam."
+            agency: 'LUISA SPA',
+            review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, reiciendis."
         }
     ],
-    current_client: 0
+    current_client: 0,
 });

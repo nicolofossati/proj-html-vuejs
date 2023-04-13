@@ -137,10 +137,13 @@
                     </div>
                 </div>
                 <div class="card-container divider">
-                    <img src="../img/clients_partner_1-200x202.png" alt="">
-                    <img src="../img/clients_partner_2-200x202.png" alt="">
-                    <img src="../img/clients_partner_3-200x202.png" alt="">
-                    <img src="../img/clients_partner_4-200x202.png" alt=""><!--
+                    <div class="left-arrow"><i class="fa-solid fa-chevron-left" @click="change_partners('left')"></i></div>
+                    <div class="right-arrow"><i class="fa-solid fa-chevron-right" @click="change_partners('right')"></i>
+                    </div>
+
+                    <img :src="getImgUrl(`../img/clients_partner_${partner}-200x202.png`)" alt=""
+                        v-for="partner in current_partners">
+                    <!--
                     <img src="../img/clients_partner_5-200x202.png" alt="">
                     <img src="../img/clients_partner_6-200x202.png" alt="">-->
                 </div>
@@ -165,7 +168,8 @@
 export default {
     data() {
         return {
-            store
+            store,
+            current_partners: [1, 2, 3, 4]
         }
     }, components: {
         Card, PrimaryButton
@@ -178,6 +182,25 @@ export default {
                 store.current_client--;
             } else { // right
                 store.current_client++;
+            }
+        },
+        change_partners(side) {
+            if (side == "left") {
+                for (let i = 0; i < 4; i++) {
+                    if (this.current_partners[i] == 1) {
+                        this.current_partners[i] = 6;
+                    } else {
+                        this.current_partners[i]--;
+                    }
+                }
+            } else {
+                for (let i = 0; i < 4; i++) {
+                    if (this.current_partners[i] == 6) {
+                        this.current_partners[i] = 1;
+                    } else {
+                        this.current_partners[i]++;
+                    }
+                }
             }
         }
     }
@@ -322,20 +345,22 @@ import Card from './Card.vue';
     }
 
     .reviews {
+        .left-arrow {
+            position: absolute;
+            left: 0;
+            top: 50%;
+        }
+
+        .right-arrow {
+            position: absolute;
+            right: 0;
+            top: 50%;
+        }
+
         .slider-reviews {
             position: relative;
 
-            .left-arrow {
-                position: absolute;
-                left: 0;
-                top: 50%;
-            }
 
-            .right-arrow {
-                position: absolute;
-                right: 0;
-                top: 50%;
-            }
 
             .section-info {
                 padding-bottom: 30px;
@@ -389,6 +414,7 @@ import Card from './Card.vue';
             border-top: 1px solid $light-grey-text;
             justify-content: space-around;
             padding-bottom: 40px;
+            position: relative;
 
             img {
                 width: 100px;
