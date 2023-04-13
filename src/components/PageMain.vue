@@ -123,18 +123,26 @@
                         <span class="dot"></span>
                     </div>
                 </div>
-                <div class="card-container">
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
+                <div class="card-container divider">
+                    <img src="../img/clients_partner_1-200x202.png" alt="">
+                    <img src="../img/clients_partner_2-200x202.png" alt="">
+                    <img src="../img/clients_partner_3-200x202.png" alt="">
+                    <img src="../img/clients_partner_4-200x202.png" alt=""><!--
+                    <img src="../img/clients_partner_5-200x202.png" alt="">
+                    <img src="../img/clients_partner_6-200x202.png" alt="">-->
                 </div>
             </div>
         </section>
         <section class="contact-us">
-            <div>
-                <h3>Start Tour Free Concultation</h3>
-                <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, molestiae!</span>
+            <div class="img-backround"></div>
+            <div class="contact-us-content">
+                <div class="section-info">
+                    <h3>Start Your Free Concultation</h3>
+                    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, molestiae!</span>
+                    <div class="button-container">
+                        <PrimaryButton :content="'contact us now'" />
+                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -245,6 +253,8 @@ import Card from './Card.vue';
     .reviews {
 
         .section-info {
+            padding-bottom: 30px;
+
             img {
                 width: 100px;
                 border-radius: 50%;
@@ -288,7 +298,46 @@ import Card from './Card.vue';
             }
         }
 
+        .divider {
+            border-top: 1px solid $light-grey-text;
+            justify-content: space-around;
+            padding-bottom: 40px;
 
+            img {
+                width: 100px;
+            }
+        }
+
+    }
+
+    .contact-us {
+        position: relative;
+
+        .img-backround {
+            background-image: url('../img/case-study-gallery-3-1-1200x900.jpg');
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+
+            &::before {
+                content: '';
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgb(0, 0, 0, 0.4);
+                position: absolute;
+            }
+        }
+
+        padding-top: 0;
+        color: white;
+
+        .contact-us-content {
+            padding: 50px 0;
+            position: relative;
+        }
     }
 
     .button-container {
