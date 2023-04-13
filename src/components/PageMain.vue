@@ -202,7 +202,20 @@ export default {
                     }
                 }
             }
+        },
+        start_partner_slider() {
+            interval = setInterval(() => {
+                for (let i = 0; i < 4; i++) {
+                    if (this.current_partners[i] == 6) {
+                        this.current_partners[i] = 1;
+                    } else {
+                        this.current_partners[i]++;
+                    }
+                }
+            }, 2000);
         }
+    }, mounted() {
+        this.start_partner_slider();
     }
 }
 
@@ -419,6 +432,7 @@ import Card from './Card.vue';
             img {
                 width: 100px;
             }
+
         }
 
     }
