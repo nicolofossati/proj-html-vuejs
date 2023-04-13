@@ -433,6 +433,15 @@ import Card from './Card.vue';
                 width: 100px;
             }
 
+            .left-arrow,
+            .right-arrow {
+                display: none;
+            }
+
+            &:hover .left-arrow,
+            &:hover .right-arrow {
+                display: block;
+            }
         }
 
     }
