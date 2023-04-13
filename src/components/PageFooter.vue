@@ -8,8 +8,8 @@
         </div>
 
         <div class="copyright">
-            <span>©Copyright 2012-2020 | Avada Theme by <span>ThemeFision</span> | All rights Reserved | Powered by
-                WordPress</span>
+            <span>©Copyright 2012-2020 | Avada Theme by <span class="emphasized">ThemeFision</span> | All rights Reserved |
+                Powered by <span class="emphasized">WordPress</span></span>
         </div>
 
         <div class="social">
@@ -37,21 +37,44 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+    color: $grey-text;
 
-.logo {
-    width: 150px;
-}
-
-.nav-bar {
-
-    .selected {
-        color: $primary-color;
+    .logo {
+        width: 150px;
+        padding: 40px 0;
     }
 
-    span {
-        padding-left: 15px;
-        font-size: 14px;
+    .copyright {
+
+        font-size: 13px;
+
+        .emphasized {
+            color: black;
+            font-weight: 600;
+        }
+    }
+
+    .nav-bar {
+        padding-bottom: 40px;
+
+        .selected {
+            color: $primary-color;
+        }
+
+        span {
+            padding-left: 30px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+    }
+
+    .social {
+        padding: 20px 0;
+
+        i {
+            font-size: 25px;
+            padding: 0 15px;
+        }
     }
 }
 </style>
